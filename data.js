@@ -12,7 +12,7 @@ window.SITE_DATA = {
      Navbar, footer, About, SEO, and contact areas.
   --------------------------------------------------------------------- */
   club: {
-    name: "Team Chitraksh",
+    name: "Team Chitraksha",
     subtitle: "Official Media Cell Of SGGSIE&T",
     college: "Shri Guru Gobind Singhji Institute of Engineering and Technology",
     collegeShort: "SGGSIE&T",
