@@ -284,7 +284,7 @@ window.SITE_DATA = {
       image: "assets/images/members/treasurer.jpg",
       description: "",
       instagram: "", linkedin: "", email: "",
-      order: 5
+      order: 2
     },
     {
       id: 9,
@@ -304,7 +304,7 @@ window.SITE_DATA = {
       image: "assets/images/members/photography-co-head.jpg",
       description: "",
       instagram: "", linkedin: "", email: "",
-      order: 2
+      order: 3
     },
     {
       id: 11,
@@ -314,7 +314,7 @@ window.SITE_DATA = {
       image: "assets/images/members/videography-head.jpg",
       description: "",
       instagram: "", linkedin: "", email: "",
-      order: 3
+      order: 4
     },
     {
       id: 12,
@@ -384,7 +384,7 @@ window.SITE_DATA = {
       image: "assets/images/members/core-member-2.jpg",
       description: "",
       instagram: "", linkedin: "", email: "",
-      order: 2
+      order: 7
     },
     {
       id: 19,
@@ -394,7 +394,7 @@ window.SITE_DATA = {
       image: "assets/images/members/core-member-3.jpg",
       description: "",
       instagram: "", linkedin: "", email: "",
-      order: 3
+      order: 8
     },
      {
       id: 20,
@@ -404,7 +404,7 @@ window.SITE_DATA = {
       image: "assets/images/members/core-member-3.jpg",
       description: "",
       instagram: "", linkedin: "", email: "",
-      order: 3
+      order: 9
     },
      {
       id: 21,
@@ -414,7 +414,7 @@ window.SITE_DATA = {
       image: "assets/images/members/core-member-3.jpg",
       description: "",
       instagram: "", linkedin: "", email: "",
-      order: 3
+      order: 10
     },
      {
       id: 22,
@@ -424,7 +424,7 @@ window.SITE_DATA = {
       image: "assets/images/members/core-member-3.jpg",
       description: "",
       instagram: "", linkedin: "", email: "",
-      order: 3
+      order: 11
     },
     {
       id: 23,
@@ -434,13 +434,13 @@ window.SITE_DATA = {
       image: "assets/images/members/volunteer-1.jpg",
       description: "",
       instagram: "", linkedin: "", email: "",
-      order: 1
+      order: 12
     },
     {
       id: 21,
       name: "Volunteer Name",
       position: "Volunteer",
-      group: "Volunteers",
+      group: "Team Chitraksha",
       image: "assets/images/members/volunteer-2.jpg",
       description: "",
       instagram: "", linkedin: "", email: "",
