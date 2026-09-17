@@ -93,6 +93,21 @@
     });
   }
 
+  function initializeAmbientAudio() {
+    const src = SETTINGS.sounds && SETTINGS.sounds.ambient;
+    if (!src) return;
+
+    const ambient = new Audio(src);
+    ambient.loop = true;
+    ambient.volume = 0.2;
+
+    const playAmbient = () => {
+      ambient.play().catch(() => {});
+    };
+
+    document.addEventListener("pointerdown", playAmbient, { once: true, passive: true });
+  }
+
   function updateSoundToggle() {
     const toggle = document.getElementById("soundToggle");
     if (!toggle) return;
@@ -905,6 +920,72 @@
   }
 
   /* -----------------------------------------------------------------------
+     CINEMATIC, NON-WEBGL ENHANCEMENTS
+  ----------------------------------------------------------------------- */
+  function initializeCinematicNavbar() {
+    const navbar = document.getElementById("navbar");
+    if (!navbar) return;
+
+    const updateNavbar = () => navbar.classList.toggle("is-scrolled", window.scrollY > 12);
+    updateNavbar();
+    window.addEventListener("scroll", updateNavbar, { passive: true });
+  }
+
+  function initializeCinematicHero() {
+    const hero = document.querySelector(".hero");
+    if (!hero || !effectsEnabled() || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+    hero.addEventListener("pointermove", (event) => {
+      const bounds = hero.getBoundingClientRect();
+      const x = ((event.clientX - bounds.left) / bounds.width) * 100;
+      const y = ((event.clientY - bounds.top) / bounds.height) * 100;
+      hero.style.setProperty("--hero-light-x", `${Math.max(0, Math.min(100, x))}%`);
+      hero.style.setProperty("--hero-light-y", `${Math.max(0, Math.min(100, y))}%`);
+    }, { passive: true });
+  }
+
+  function initializeCursorSpotlight() {
+    if (!effectsEnabled() || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+    const spotlight = document.createElement("div");
+    spotlight.className = "cinematic-spotlight";
+    spotlight.setAttribute("aria-hidden", "true");
+    document.body.appendChild(spotlight);
+    document.body.classList.add("has-cinematic-spotlight");
+
+    let nextX = window.innerWidth / 2;
+    let nextY = window.innerHeight / 2;
+    let frame = null;
+
+    const render = () => {
+      spotlight.style.left = `${nextX}px`;
+      spotlight.style.top = `${nextY}px`;
+      frame = null;
+    };
+
+    window.addEventListener("pointermove", (event) => {
+      nextX = event.clientX;
+      nextY = event.clientY;
+      if (!frame) frame = requestAnimationFrame(render);
+    }, { passive: true });
+  }
+
+  function initializeCinematicStaggers() {
+    const groups = [
+      "#driveGrid", "#upcomingList", ".team__grid", "#formerGrid",
+      "#videosGrid", "#reelsGrid", "#achievementsGrid"
+    ];
+
+    groups.forEach((selector) => {
+      $$(selector).forEach((group) => {
+        $$('[data-animate]', group).forEach((item, index) => {
+          item.style.setProperty("--reveal-delay", `${Math.min(index, 7) * 55}ms`);
+        });
+      });
+    });
+  }
+
+  /* -----------------------------------------------------------------------
      SCROLL ENTRANCE ANIMATIONS
   ----------------------------------------------------------------------- */
   let sharedObserver = null;
@@ -951,6 +1032,11 @@
     renderReels();
     initializeNavigation();
     initializeSound();
+    initializeAmbientAudio();
+    initializeCinematicNavbar();
+    initializeCinematicHero();
+    initializeCursorSpotlight();
+    initializeCinematicStaggers();
     initializeScrollAnimations();
     initializeParallax();
   }
