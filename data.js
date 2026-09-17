@@ -79,7 +79,7 @@ window.SITE_DATA = {
   --------------------------------------------------------------------- */
   hero: {
     eyebrow: "Official Media Cell · SGGSIE&T",
-    title: "Team Chitraksh",
+    title: "Team Chitraksha",
     tagline: "Capturing moments, creating memories, and celebrating the art of photography.",
     ctaLabel: "Explore Our Work",
     ctaTarget: "#gallery",
