@@ -2053,12 +2053,283 @@ body.secondary-open {
 }
 
 /* =========================================================================
-   SURREAL LIQUID EFFECT (SHERY.JS)
+   PREMIUM CINEMATIC EFFECTS — CSS-ONLY, NO WEBGL
    ========================================================================= */
-.gallery__item canvas {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  border-radius: var(--radius-md) !important;
-  pointer-events: none; /* Allows the parent container to still register hovers */
+
+/* A restrained photographic finish, kept above page content but below the UI. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  pointer-events: none;
+  opacity: 0.48;
+  background: radial-gradient(ellipse at center, transparent 42%, rgba(0, 0, 0, 0.24) 100%);
+}
+
+.cinematic-spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 34rem;
+  height: 34rem;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate3d(-50%, -50%, 0);
+  background: radial-gradient(circle, rgba(82, 143, 255, 0.075), transparent 66%);
+  transition: opacity 0.35s ease;
+  mix-blend-mode: screen;
+}
+
+body.has-cinematic-spotlight .cinematic-spotlight {
+  opacity: 1;
+}
+
+.navbar {
+  transition: background 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease, backdrop-filter 0.45s ease;
+}
+
+.navbar.is-scrolled {
+  background: rgba(3, 5, 8, 0.9);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.24), 0 1px 0 rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.68;
+  background: radial-gradient(circle at var(--hero-light-x, 50%) var(--hero-light-y, 45%), rgba(77, 137, 255, 0.14), transparent 28%);
+  transition: background-position 0.35s ease-out;
+}
+
+.hero__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 42%, transparent 18%, rgba(0, 0, 0, 0.18) 100%);
+}
+
+.hero__media img {
+  filter: saturate(0.93) contrast(1.04);
+  transition: filter 0.9s ease;
+}
+
+.hero:hover .hero__media img {
+  filter: saturate(1) contrast(1.06);
+}
+
+.hero__eyebrow {
+  position: relative;
+  display: inline-block;
+}
+
+.hero__eyebrow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 34px;
+  height: 1px;
+  opacity: 0.65;
+  background: var(--gold);
+}
+
+.section {
+  position: relative;
+  isolation: isolate;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 12%;
+  left: -12rem;
+  z-index: 0;
+  width: min(34rem, 65vw);
+  height: 20rem;
+  pointer-events: none;
+  background: radial-gradient(ellipse, rgba(47, 128, 255, 0.045), transparent 70%);
+}
+
+.section__inner,
+.gallery {
+  position: relative;
+  z-index: 1;
+}
+
+.section:nth-of-type(even)::before {
+  right: -12rem;
+  left: auto;
+  background: radial-gradient(ellipse, rgba(245, 185, 27, 0.03), transparent 70%);
+}
+
+[data-animate] {
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.event-card,
+.member-card,
+.former-card,
+.upcoming-card,
+.video-card,
+.reel-card,
+.achievement-card,
+.query__box {
+  position: relative;
+  isolation: isolate;
+}
+
+.event-card::after,
+.member-card::after,
+.former-card::after,
+.upcoming-card::after,
+.video-card::after,
+.reel-card::after,
+.achievement-card::after,
+.query__box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.075), transparent 38%);
+  transition: opacity 0.45s ease;
+}
+
+.event-card:hover::after,
+.member-card:hover::after,
+.former-card:hover::after,
+.upcoming-card:hover::after,
+.video-card:hover::after,
+.reel-card:hover::after,
+.achievement-card:hover::after,
+.query__box:hover::after {
+  opacity: 1;
+}
+
+.event-card__media,
+.member-card__media,
+.former-card__media,
+.video-card__thumb,
+.reel-card,
+.achievement-card {
+  background: #000;
+}
+
+.event-card__media img,
+.member-card__media img,
+.former-card__media img,
+.video-card__thumb img,
+.reel-card img,
+.achievement-card img {
+  filter: saturate(0.93);
+  transition: transform 0.85s var(--ease), filter 0.65s ease;
+}
+
+.event-card:hover .event-card__media img,
+.member-card:hover .member-card__media img,
+.former-card:hover .former-card__media img,
+.video-card:hover .video-card__thumb img,
+.reel-card:hover img,
+.achievement-card:hover img {
+  transform: scale(1.055);
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.gallery__item {
+  transition: transform 0.65s var(--ease), opacity 0.5s ease, filter 0.5s ease, border-color 0.4s ease, box-shadow 0.5s ease;
+}
+
+.gallery__item img {
+  filter: saturate(0.92);
+  transition: transform 0.85s var(--ease), filter 0.65s ease;
+}
+
+.gallery__item:hover,
+.gallery__item:focus-visible {
+  z-index: 3;
+  transform: translateY(-7px) scale(1.012);
+  border-color: rgba(245, 185, 27, 0.3);
+  box-shadow: 0 24px 50px -30px rgba(0, 0, 0, 0.95);
+  outline: none;
+}
+
+.gallery__item:hover img,
+.gallery__item:focus-visible img {
+  transform: scale(1.065);
+  filter: saturate(1.05) contrast(1.04);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .gallery:hover .gallery__item {
+    opacity: 0.72;
+    filter: saturate(0.78);
+  }
+
+  .gallery:hover .gallery__item:hover {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.35s var(--ease), filter 0.35s ease, box-shadow 0.35s ease;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, 0.16) 50%, transparent 75%);
+  transform: translateX(-130%);
+  transition: transform 0.7s var(--ease);
+}
+
+.btn:hover::after,
+.btn:focus-visible::after {
+  transform: translateX(130%);
+}
+
+.btn:focus-visible,
+.gallery__item:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+@media (hover: none), (pointer: coarse) {
+  body::before,
+  .hero::before,
+  .section::before {
+    opacity: 0.32;
+  }
+
+  .gallery__item:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+body.effects-off::before,
+body.reduce-motion::before,
+body.effects-off .hero::before,
+body.reduce-motion .hero::before,
+body.effects-off .section::before,
+body.reduce-motion .section::before {
+  display: none;
 }
