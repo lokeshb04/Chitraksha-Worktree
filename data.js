@@ -1,5 +1,5 @@
 /* =========================================================================
-   CHITRAKSH — SITE DATA & CONFIGURATION
+   CHITRAKSHA — SITE DATA & CONFIGURATION
    -------------------------------------------------------------------------
    Edit THIS FILE to update club content. The rest of the site reads from
    window.SITE_DATA. Search for the headings below (e.g. "UPCOMING EVENTS").
@@ -17,7 +17,7 @@ window.SITE_DATA = {
     college: "Shri Guru Gobind Singhji Institute of Engineering and Technology",
     collegeShort: "SGGSIE&T",
     tagline: "Capturing moments, creating memories, and celebrating the art of photography.",
-    about: "Team Chitraksh is the official photography and media cell of SGGSIE&T. We document campus life, cover college events, and create photographs, films, and social content that represent the institute.",
+    about: "Team Chitraksha is the official photography and media cell of SGGSIE&T. We document campus life, cover college events, and create photographs, films, and social content that represent the institute.",
     email: "media@sggs.ac.in",
     phone: "+91 6376343015",
     address: "Guru Tegh Bahadurji Marg, Vishnupuri, Maharashtra 431606",
