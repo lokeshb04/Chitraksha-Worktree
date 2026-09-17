@@ -208,7 +208,7 @@ window.SITE_DATA = {
   leadership: [
     {
       id: 1,
-      name: "Director Name",
+      name: "Dr. Manesh B. Kokare",
       position: "Institute Director",
       group: "Institute Leadership",
       image: "assets/images/members/director.jpg",
@@ -218,8 +218,8 @@ window.SITE_DATA = {
     },
     {
       id: 2,
-      name: "Faculty Coordinator Name",
-      position: "Faculty Coordinator",
+      name: "Dr. M. V. Vaidya",
+      position: "Dean Student Activities",
       group: "Faculty",
       image: "assets/images/members/faculty-coordinator.jpg",
       description: "",
@@ -228,8 +228,8 @@ window.SITE_DATA = {
     },
     {
       id: 3,
-      name: "Faculty Co-Coordinator Name",
-      position: "Faculty Co-Coordinator",
+      name: "Dr. Pranjala G. Kolapwar",
+      position: "Faculty Coordinator",
       group: "Faculty",
       image: "assets/images/members/faculty-co-coordinator.jpg",
       description: "",
@@ -238,8 +238,8 @@ window.SITE_DATA = {
     },
     {
       id: 4,
-      name: "President Name",
-      position: "Club President",
+      name: "Aditya Chalak",
+      position: "Media Secretary",
       group: "Club Leadership",
       image: "assets/images/members/president.jpg",
       description: "",
@@ -248,8 +248,8 @@ window.SITE_DATA = {
     },
     {
       id: 5,
-      name: "Vice President Name",
-      position: "Vice President",
+      name: "Suhani Malviya",
+      position: "Student Main Coordinator",
       group: "Club Leadership",
       image: "assets/images/members/vice-president.jpg",
       description: "",
@@ -258,8 +258,8 @@ window.SITE_DATA = {
     },
     {
       id: 6,
-      name: "Secretary Name",
-      position: "Secretary",
+      name: "Yash Patil",
+      position: "Chief Video Editor",
       group: "Club Leadership",
       image: "assets/images/members/secretary.jpg",
       description: "",
@@ -268,8 +268,8 @@ window.SITE_DATA = {
     },
     {
       id: 7,
-      name: "Joint Secretary Name",
-      position: "Joint Secretary",
+      name: "Suyash Maske",
+      position: "Director Of Photography",
       group: "Club Leadership",
       image: "assets/images/members/joint-secretary.jpg",
       description: "",
