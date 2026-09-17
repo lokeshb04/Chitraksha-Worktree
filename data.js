@@ -84,7 +84,7 @@ window.SITE_DATA = {
     ctaLabel: "Explore Our Work",
     ctaTarget: "#gallery",
     logo: "assets/images/hero/Logo.jpeg",
-    background: "assets/images/hero/admin-sggs.webp",
+    background: "assets/images/hero/admin-sggs.webp?v=2",
   },
 
   /* ---------------------------------------------------------------------
