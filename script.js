@@ -10,7 +10,7 @@
   const SETTINGS = DATA.settings || {};
   const $ = (sel, ctx) => (ctx || document).querySelector(sel);
   const $$ = (sel, ctx) => Array.from((ctx || document).querySelectorAll(sel));
-  const SOUND_STORAGE_KEY = "chitraksh-sound";
+  const SOUND_STORAGE_KEY = "chitraksha-sound";
 
   function esc(str) {
     if (str === undefined || str === null) return "";
