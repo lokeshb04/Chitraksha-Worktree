@@ -34,7 +34,7 @@ window.SITE_DATA = {
     enableAnimations: true,               // scroll fade-in, hover motion, hero intro
     enableParallax: true,                 // subtle hero background shift on scroll
     enableGalleryAutoplay: true,          // infinite gallery auto-scroll
-    enableSurrealLiquidDistortion: true,  // WebGL fluid displacement on gallery hover
+    enableSurrealLiquidDistortion: false,  // WebGL fluid displacement on gallery hover
     effectIntensity: 1,                   // 0–1 (hover zoom / motion amount)
     transitionSpeedMs: 1000,              // scroll-reveal duration
 
