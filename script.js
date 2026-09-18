@@ -192,6 +192,10 @@
       heroBg.src = hero.background;
       heroBg.alt = "";
     }
+    const heroBgMobile = document.getElementById("heroBackgroundMobile");
+    if (heroBgMobile && hero.mobileBackground) {
+      heroBgMobile.srcset = hero.mobileBackground;
+    }
     const heroLogo = document.getElementById("heroLogo");
     if (heroLogo && hero.logo) {
       heroLogo.src = hero.logo;
@@ -1047,4 +1051,3 @@
     initializeSite();
   }
 })();
-
